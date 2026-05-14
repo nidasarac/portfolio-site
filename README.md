@@ -2,6 +2,10 @@
 
 Personal portfolio website built to present my mobile development experience, featured app work, and technical background.
 
+## Live Site
+
+[View the live portfolio](https://nidasarac.com)
+
 ## Overview
 
 This project showcases:
