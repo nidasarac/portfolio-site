@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Nida Sarac | Creative Tech Portfolio",
   description:
     "A playful bilingual portfolio for Nida Sarac, focused on mobile development, shipped apps, and product feel.",
+  icons: {
+    icon: "/ns-icon.png",
+    shortcut: "/ns-icon.png",
+    apple: "/ns-icon.png",
+  },
 };
 
 export default function RootLayout({
