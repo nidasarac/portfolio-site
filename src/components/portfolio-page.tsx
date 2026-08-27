@@ -94,6 +94,39 @@ const electroopV2Screenshots = [
   },
 ] as const;
 
+const footballFantasyScreenshots = [
+  {
+    src: "/images/football-fantasy/home.png",
+    alt: "Football Fantasy home screen",
+    label: "Home",
+  },
+  {
+    src: "/images/football-fantasy/fixtures.png",
+    alt: "Football Fantasy match calendar screen",
+    label: "Fixtures",
+  },
+  {
+    src: "/images/football-fantasy/prediction.png",
+    alt: "Football Fantasy match prediction screen",
+    label: "Prediction",
+  },
+  {
+    src: "/images/football-fantasy/past-predictions.png",
+    alt: "Football Fantasy past predictions screen",
+    label: "History",
+  },
+  {
+    src: "/images/football-fantasy/league-standings.png",
+    alt: "Football Fantasy league standings screen",
+    label: "League",
+  },
+  {
+    src: "/images/football-fantasy/profile.png",
+    alt: "Football Fantasy profile screen",
+    label: "Profile",
+  },
+] as const;
+
 const electroopV1Screenshots = [
   {
     src: "/images/electroop-v1/map-overview.png",
@@ -193,7 +226,7 @@ const content = {
     ],
     showcaseTitle: "Portfolio Showcase",
     showcaseText:
-      "Electroop V2 and NovaCandle now include real app screens from production and personal work.",
+      "Electroop V1/V2, NovaCandle, and Football Fantasy now include real app screens from production and personal work.",
     appSections: [
       {
         id: "electroop-1",
@@ -211,6 +244,13 @@ const content = {
         id: "nova-candle",
         title: "NovaCandle",
         subtitle: "Selected screens from a focus and productivity app built with React Native and Expo.",
+        tag: "Real app screens",
+      },
+      {
+        id: "football-fantasy",
+        title: "Football Fantasy",
+        subtitle:
+          "A fantasy football app where friends create or join a league, predict match outcomes, and score points to climb the leaderboard. Screens shown are from the World Cup edition; the app extends to other leagues too.",
         tag: "Real app screens",
       },
     ],
@@ -360,7 +400,7 @@ const content = {
     ],
     showcaseTitle: "Portfolyo Vitrini",
     showcaseText:
-      "Electroop V2 ve NovaCandle alanlarında artık gerçek uygulama ekranları yer alıyor.",
+      "Electroop V1/V2, NovaCandle ve Football Fantasy alanlarında artık gerçek uygulama ekranları yer alıyor.",
     appSections: [
       {
         id: "electroop-1",
@@ -378,6 +418,13 @@ const content = {
         id: "nova-candle",
         title: "NovaCandle",
         subtitle: "React Native ve Expo ile geliştirdiğim odak ve üretkenlik uygulamasından seçili ekranlar.",
+        tag: "Gerçek uygulama ekranları",
+      },
+      {
+        id: "football-fantasy",
+        title: "Football Fantasy",
+        subtitle:
+          "Arkadaşlarınla lig kurup katılabildiğin, maç sonuçlarını tahmin ederek puan topladığın ve sıralamada yarıştığın bir fantasy futbol uygulaması. Gösterilen ekranlar Dünya Kupası sürümünden; uygulama diğer liglere de genişliyor.",
         tag: "Gerçek uygulama ekranları",
       },
     ],
@@ -937,7 +984,7 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch xl:grid-cols-4">
             {t.appSections.map((item) => (
               <Reveal key={item.title}>
                 <PhoneMockup
@@ -947,7 +994,8 @@ export default function PortfolioPage() {
                   swipeHint={
                     item.id === "nova-candle" ||
                     item.id === "electroop-2" ||
-                    item.id === "electroop-1"
+                    item.id === "electroop-1" ||
+                    item.id === "football-fantasy"
                       ? t.showcaseSwipeHint
                       : undefined
                   }
@@ -958,6 +1006,8 @@ export default function PortfolioPage() {
                         ? electroopV1Screenshots
                       : item.id === "electroop-2"
                         ? electroopV2Screenshots
+                      : item.id === "football-fantasy"
+                        ? footballFantasyScreenshots
                         : undefined
                   }
                 />
